@@ -1,0 +1,21 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v3.2.0
+  hooks:
+  - id: trailing-whitespace
+  - id: end-of-file-fixer
+  - id: check-yaml
+  - id: check-added-large-files
+  - id: check-toml
+  - id: check-merge-conflict
+  - id: detect-private-key
+- repo: local
+  hooks:
+  - id: kaas-sli-hook
+    name: kaas-sli-hook
+    description: pre-commit hooks for kaas-sli
+    entry: ./hack/pre-commit.sh
+    language: script
+    pass_filenames: false
+default_language_version:
+  golang: go1.15
